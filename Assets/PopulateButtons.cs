@@ -9,10 +9,13 @@ public class PopulateButtons : MonoBehaviour
     public GameObject buttonPrefab;
     
     public Transform content;
+    public ParticleSystem psFire;
+    public List<GameObject> particlesToSpawn = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
+        
         MyButton fireButton = Instantiate(buttonPrefab, content).GetComponent<MyButton>();
         fireButton.SetText("Fire");
         fireButton.callback = ButtonClicked;
@@ -32,6 +35,7 @@ public class PopulateButtons : MonoBehaviour
 
     public void ButtonClicked(string buttonText)
     {
+        psFire.Play();
         Debug.Log("Clicked: " + buttonText);
     }
 }

@@ -15,6 +15,7 @@ public class MyButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData data)
     {
         callback?.Invoke(text.text); //calls callback function andpasses back string in the text
+        
     }
 
     public void SetText(string s)
